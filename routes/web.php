@@ -11,4 +11,11 @@
 |
 */
 
-Route::get('/home', 'PagesController@home');
+Route::get('/', 'PagesController@gate');
+
+
+//Member Controller
+Route::get('register', 'MemberController@showRegistrationForm')->name('register.get');
+Route::get('register/token={token}')->name('register.sendtoken');
+Route::post('register', 'MemberController@register')->name('register.post');
+
